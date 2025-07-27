@@ -1,19 +1,20 @@
 public class Triangle {
 
-    public static void main(String[] args) {
-        double a = 3;
-        double b = 4;
-        double c = 5;
+    private double a;
+    private double b;
+    private double c;
 
-        System.out.println("Периметр треугольника со сторонами " + a + " и " + b + " и " + c + " = " + trianglePerimeter(a, b, c));
-        System.out.println("Площадь треугольника со сторонами " + a + " и " + b + " и " + c + " = " + triangleArea(a, b, c));
+    public Triangle(double a, double b, double c) {
+        this.a = a;
+        this.b = b;
+        this.c = c;
     }
 
-    public static double trianglePerimeter(double a, double b, double c) {
-        return a + b + c;
+    public double perimeter() {
+        return this.a + this.b + this.c;
     }
 
-    public static double triangleArea(double a, double b, double c) {
+    public double area() {
         double p = ((a + b + c) / 2);
         return Math.sqrt(p * (p - a) * (p - b) * (p - c));
     }
