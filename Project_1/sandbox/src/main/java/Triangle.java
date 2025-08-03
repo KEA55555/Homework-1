@@ -8,14 +8,21 @@ public class Triangle {
         this.a = a;
         this.b = b;
         this.c = c;
-    }
 
-    public double perimeter() {
-        return this.a + this.b + this.c;
-    }
+        if (a < 0) {
+            throw new IllegalArgumentException("Triangle side should be non-negative");
+        }
 
-    public double area() {
-        double p = ((a + b + c) / 2);
-        return Math.sqrt(p * (p - a) * (p - b) * (p - c));
+        if (a + b < c)  {
+            throw new IllegalArgumentException("The triangle inequality must not be violated");
+        }
     }
-}
+        public double perimeter () {
+            return this.a + this.b + this.c;
+        }
+
+        public double area () {
+            double p = ((a + b + c) / 2);
+            return Math.sqrt(p * (p - a) * (p - b) * (p - c));
+        }
+    }
